@@ -21,7 +21,9 @@ namespace Lista_zakupów
             Produkt Produkt4 = new Produkt(4, "d", "dd", 40);
             DodajDoKoszyka(MojKoszyk, 4, Produkt4);
             WyswietlZawartoscKoszyka();
-
+            Console.WriteLine("");
+            UsunZKoszyka(4);
+            WyswietlZawartoscKoszyka();
 
             Console.ReadLine();
 

@@ -16,6 +16,11 @@ namespace Lista_zakupów
         {
             MojKoszyk.Add(klucz, nowyProdukt);
         }
+        public static void UsunZKoszyka(int klucz)//teraz mam problem bo jeżeli usunę któryś z środkowych indeksów słownika i potem wywołam wyświetlenie to napotykam wyjątek
+            //do poprawienia jest WyswietlZawartoscKoszyka oraz UsunZKoszyka
+        {
+            MojKoszyk.Remove(klucz);
+        }
         public static void WyswietlZawartoscKoszyka()
         {
             int aPomoc = 0;
