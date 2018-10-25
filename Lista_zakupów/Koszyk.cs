@@ -22,7 +22,18 @@ namespace Lista_zakupów
             Console.WriteLine("W koszyku mamy:");
             for (int i = 0; i < MojKoszyk.Count; i++)
             {
-                Console.WriteLine($"Numer produktu: {MojKoszyk[i].NumerProduktu} Nazwa produktu : {MojKoszyk[i].Nazwa} Opis produktu : {MojKoszyk[i].OpisProduktu} Cena: {MojKoszyk[i].Cena} zł ");
+                Console.WriteLine($"Kod produktu: {MojKoszyk[i].KodProduktu} Nazwa produktu : {MojKoszyk[i].Nazwa} Opis produktu : {MojKoszyk[i].OpisProduktu} Cena: {MojKoszyk[i].Cena} zł ");
+            }
+
+        }
+        public void UsunZKoszyka(uint _kodUsuwanego)
+        {
+            for (int i = 0; i < MojKoszyk.Count; i++)
+            {
+                if (MojKoszyk[i].KodProduktu == _kodUsuwanego)
+                {
+                    MojKoszyk.RemoveAt(i);
+                }   
             }
 
         }
