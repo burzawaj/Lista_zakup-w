@@ -49,6 +49,10 @@ namespace Lista_zakupów
             Console.WriteLine($"Wartość koszyka wynosi: {_sumaCen}");
 
         }
+        public void SortujPoCenach()
+        {
+            MojKoszyk.Sort();
+        }
     }
 
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lista_zakupów
 {
-    class Produkt:ICeny
+    class Produkt:ICeny,IComparable<Produkt>
     {
         public decimal Cena { get; private set; }
         public uint KodProduktu { get; private set; }
@@ -23,6 +23,19 @@ namespace Lista_zakupów
         public virtual void PodajCene()
         {
             Console.WriteLine($"Cena wynosi produktu wynosi: {Cena}zl");
+        }
+
+        public int CompareTo(Produkt other)
+        {
+            if (Cena == other.Cena)
+            {
+                return 0;
+            }
+            else if (Cena > other.Cena)
+            {
+                return 1;
+            }
+            return -1;
         }
     }
 }
