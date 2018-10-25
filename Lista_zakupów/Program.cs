@@ -23,8 +23,10 @@ namespace Lista_zakupów
             KoszJarek.DodajDoKoszyka(Produkt3);
             KoszJarek.DodajDoKoszyka(Produkt4);
             KoszJarek.WyswietlKoszyk();
-            KoszJarek.UsunZKoszyka(3);
-            KoszJarek.WyswietlKoszyk();
+            /*KoszJarek.UsunZKoszyka(3);
+            KoszJarek.WyswietlKoszyk();*/
+            Produkt1.PodajCene();
+            KoszJarek.PodajCene();
             Console.ReadLine();
         }
     }

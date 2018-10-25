@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lista_zakupów
 {
-    class Produkt
+    class Produkt:ICeny
     {
         public decimal Cena { get; private set; }
         public uint KodProduktu { get; private set; }
@@ -19,6 +19,10 @@ namespace Lista_zakupów
             Nazwa = _nazwa;
             Cena = _cena;
             OpisProduktu = _opis;
+        }
+        public virtual void PodajCene()
+        {
+            Console.WriteLine($"Cena wynosi produktu wynosi: {Cena}zl");
         }
     }
 }

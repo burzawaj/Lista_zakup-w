@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lista_zakupów
 {
-    class Koszyk
+    class Koszyk:ICeny
     {
         public List<Produkt> MojKoszyk { get; private set; }
         public Koszyk (List<Produkt> mojKoszyk)
@@ -23,7 +23,7 @@ namespace Lista_zakupów
             for (int i = 0; i < MojKoszyk.Count; i++)
             {
                 Console.WriteLine($"Kod produktu: {MojKoszyk[i].KodProduktu} Nazwa produktu : {MojKoszyk[i].Nazwa} Opis produktu : {MojKoszyk[i].OpisProduktu} Cena: {MojKoszyk[i].Cena} zł ");
-            }
+            }   
 
         }
         public void UsunZKoszyka(uint _kodUsuwanego)
@@ -35,6 +35,18 @@ namespace Lista_zakupów
                     MojKoszyk.RemoveAt(i);
                 }   
             }
+
+        }
+
+        public virtual void PodajCene()
+        {
+            decimal _sumaCen = 0;
+            for (int i = 0; i < MojKoszyk.Count; i++)
+            {
+                _sumaCen = _sumaCen + MojKoszyk[i].Cena;
+                
+            }
+            Console.WriteLine($"Wartość koszyka wynosi: {_sumaCen}");
 
         }
     }
