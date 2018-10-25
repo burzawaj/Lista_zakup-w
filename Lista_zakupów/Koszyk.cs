@@ -8,28 +8,24 @@ namespace Lista_zakupów
 {
     class Koszyk
     {
-        static public Dictionary<int, Produkt> MojKoszyk = new Dictionary<int, Produkt>()
+        public List<Produkt> MojKoszyk { get; private set; }
+        public Koszyk (List<Produkt> mojKoszyk)
         {
-
-        };
-        public static void DodajDoKoszyka(Dictionary<int, Produkt> MojKoszyk, int klucz, Produkt nowyProdukt)
-        {
-            MojKoszyk.Add(klucz, nowyProdukt);
+            MojKoszyk = mojKoszyk;
         }
-        public static void UsunZKoszyka(int klucz)//teraz mam problem bo jeżeli usunę któryś z środkowych indeksów słownika i potem wywołam wyświetlenie to napotykam wyjątek
-            //do poprawienia jest WyswietlZawartoscKoszyka oraz UsunZKoszyka
+        public void DodajDoKoszyka(Produkt NowyProdukt)
         {
-            MojKoszyk.Remove(klucz);
+            MojKoszyk.Add(NowyProdukt);
         }
-        public static void WyswietlZawartoscKoszyka()
+        public void WyswietlKoszyk()
         {
-            int aPomoc = 0;
-            foreach (var item in MojKoszyk)
+            Console.WriteLine("W koszyku mamy:");
+            for (int i = 0; i < MojKoszyk.Count; i++)
             {
-                aPomoc = aPomoc + 1;
-                Console.WriteLine($"Numer produktu: { MojKoszyk[aPomoc].NumerProduktu} Nazwa produktu: {MojKoszyk[aPomoc].Nazwa} Opis produktu: {MojKoszyk[aPomoc].OpisProduktu} Cena: {MojKoszyk[aPomoc].Cena}");
+                Console.WriteLine($"Numer produktu: {MojKoszyk[i].NumerProduktu} Nazwa produktu : {MojKoszyk[i].Nazwa} Opis produktu : {MojKoszyk[i].OpisProduktu} Cena: {MojKoszyk[i].Cena} zł ");
             }
 
         }
     }
+
 }
