@@ -10,10 +10,7 @@ namespace Lista_zakupów
     {
         static void Main(string[] args)
         {
-            List<Produkt> KoszykJ = new List<Produkt>()
-            {
-            };
-            Koszyk KoszJarek = new Koszyk(KoszykJ);
+            Koszyk KoszJarek = new Koszyk();
             Produkt Produkt5 = new Produkt(211, "e", "ee", 50);
             Produkt Produkt4 = new Produkt(111, "a", "aa", 10);
             Produkt Produkt3 = new Produkt(221, "b", "bb", 20);

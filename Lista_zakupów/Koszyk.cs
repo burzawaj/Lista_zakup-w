@@ -9,9 +9,13 @@ namespace Lista_zakupów
     class Koszyk:ICeny
     {
         public List<Produkt> MojKoszyk { get; private set; }
-        public Koszyk (List<Produkt> mojKoszyk)
+
+        List<Produkt> mojKoszyk = new List<Produkt>()
         {
-            MojKoszyk = mojKoszyk;
+        };
+        public Koszyk()
+        {
+            MojKoszyk = mojKoszyk;   
         }
         public void DodajDoKoszyka(Produkt NowyProdukt)
         {
