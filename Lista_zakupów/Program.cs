@@ -29,6 +29,7 @@ namespace Lista_zakupów
             Console.WriteLine("");
             KoszJarek.UsunZKoszyka(221);
             KoszJarek.WyswietlKoszyk();
+            
             Console.ReadLine();
         }
     }

@@ -22,7 +22,7 @@ namespace Lista_zakupów
         }
         public virtual void PodajCene()
         {
-            Console.WriteLine($"Cena wynosi produktu wynosi: {Cena}zl");
+            Console.WriteLine($"Cena produktu wynosi: {Cena}zl");
         }
 
         public int CompareTo(Produkt other)

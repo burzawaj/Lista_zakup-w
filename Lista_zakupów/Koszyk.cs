@@ -8,35 +8,31 @@ namespace Lista_zakupów
 {
     class Koszyk:ICeny
     {
-        public List<Produkt> MojKoszyk { get; private set; }
-
-        List<Produkt> mojKoszyk = new List<Produkt>()
-        {
-        };
+        List<Produkt> mojKoszyk;
         public Koszyk()
         {
-            MojKoszyk = mojKoszyk;   
+            mojKoszyk = new List<Produkt>();   
         }
         public void DodajDoKoszyka(Produkt NowyProdukt)
         {
-            MojKoszyk.Add(NowyProdukt);
+            mojKoszyk.Add(NowyProdukt);
         }
         public void WyswietlKoszyk()
         {
             Console.WriteLine("W koszyku mamy:");
-            for (int i = 0; i < MojKoszyk.Count; i++)
+            for (int i = 0; i < mojKoszyk.Count; i++)
             {
-                Console.WriteLine($"Kod produktu: {MojKoszyk[i].KodProduktu} Nazwa produktu : {MojKoszyk[i].Nazwa} Opis produktu : {MojKoszyk[i].OpisProduktu} Cena: {MojKoszyk[i].Cena} zł ");
+                Console.WriteLine($"Kod produktu: {mojKoszyk[i].KodProduktu} Nazwa produktu : {mojKoszyk[i].Nazwa} Opis produktu : {mojKoszyk[i].OpisProduktu} Cena: {mojKoszyk[i].Cena} zł ");
             }   
 
         }
         public void UsunZKoszyka(uint _kodUsuwanego)
         {
-            for (int i = 0; i < MojKoszyk.Count; i++)
+            for (int i = 0; i < mojKoszyk.Count; i++)
             {
-                if (MojKoszyk[i].KodProduktu == _kodUsuwanego)
+                if (mojKoszyk[i].KodProduktu == _kodUsuwanego)
                 {
-                    MojKoszyk.RemoveAt(i);
+                    mojKoszyk.RemoveAt(i);
                 }   
             }
 
@@ -45,9 +41,9 @@ namespace Lista_zakupów
         public virtual void PodajCene()
         {
             decimal _sumaCen = 0;
-            for (int i = 0; i < MojKoszyk.Count; i++)
+            for (int i = 0; i < mojKoszyk.Count; i++)
             {
-                _sumaCen = _sumaCen + MojKoszyk[i].Cena;
+                _sumaCen = _sumaCen + mojKoszyk[i].Cena;
                 
             }
             Console.WriteLine($"Wartość koszyka wynosi: {_sumaCen}");
@@ -55,7 +51,7 @@ namespace Lista_zakupów
         }
         public void SortujPoCenach()
         {
-            MojKoszyk.Sort();
+            mojKoszyk.Sort();
         }
     }
 
