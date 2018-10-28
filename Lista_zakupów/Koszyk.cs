@@ -53,6 +53,14 @@ namespace Lista_zakupów
         {
             mojKoszyk.Sort();
         }
+        public void PodsumujKoszyk()
+        {
+            SortujPoCenach();
+            WyswietlKoszyk();
+            PodajCene();
+
+        }
+
     }
 
 }
